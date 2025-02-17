@@ -6,10 +6,12 @@ import * as Speech from 'expo-speech';
 // Request notification permissions (for Android)
 async function requestPermissions() {
   const { status } = await Notifications.getPermissionsAsync();
+  console.log('Notification Permission Status:', status); // Log the status
   if (status !== 'granted') {
     await Notifications.requestPermissionsAsync();
   }
 }
+
 
 export default function HomeScreen() {
   useEffect(() => {
